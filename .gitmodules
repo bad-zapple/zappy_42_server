@@ -1,0 +1,3 @@
+[submodule "libbad-zapple"]
+	path = libbad-zapple
+	url = git@github.com:bad-zapple/libbad-zapple.git
