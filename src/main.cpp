@@ -1,7 +1,7 @@
-#include "bad_zapple.h"
+#include "bad_zapple.hpp"
 
 int main(int ac, char **av) {
-	dummy(35);
+	test(ac, av);
 }
 
 

@@ -17,6 +17,6 @@ set(SRCS
 set(HEADERS
 )
 
-add_executable(bad_zapple_serv ${SRCS} ${HEADERS})
+add_executable(bzs ${SRCS} ${HEADERS})
 
-target_link_libraries(bad_zapple_serv PUBLIC bad_zapple)
+target_link_libraries(bzs PUBLIC bad-zapple)
