@@ -2,7 +2,8 @@ NAME=bzs
 BUILD_DIR=build/
 TARGET=$(BUILD_DIR)$(NAME)
 
-all: $(TARGET)
+all: 
+	make -C $(BUILD_DIR)
 
 .PHONY: all 
 
@@ -11,14 +12,17 @@ run: $(TARGET)
 
 .PHONY: run 
 
-$(TARGET): cmake-rule
+$(TARGET): 
 	make -C $(BUILD_DIR)
 	
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
-cmake-rule: update-sources
+update-cmake: update-sources
 	cmake -B $(BUILD_DIR)
+	make -C libbad-zapple update-cmake
+
+.PHONY: update-cmake 
 
 clean:
 	make clean -C $(BUILD_DIR)
@@ -39,12 +43,11 @@ re: fclean all
 
 lsp:
 	cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -B $(BUILD_DIR)
-	make lsp -C libbad-zapple
+	make -C libbad-zapple lsp
 
 .PHONY: lsp 
 
 update-sources: $(BUILD_DIR)
 	@sh ./tools/list_sources.sh build/sources.cmake
-	make update-sources -C libbad-zapple
 
 .PHONY: update-sources
