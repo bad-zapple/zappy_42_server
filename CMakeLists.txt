@@ -10,13 +10,11 @@ else()
     message(STATUS "This project is a top-level one")
 endif()
 
-set(SRCS
-	src/main.cpp
-)
+include(build/sources.cmake)
 
 set(HEADERS
 )
 
-add_executable(bzs ${SRCS} ${HEADERS})
+add_executable(bzs ${SOURCES} ${HEADERS})
 
 target_link_libraries(bzs PUBLIC bad-zapple)
