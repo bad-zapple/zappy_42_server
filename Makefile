@@ -39,6 +39,7 @@ re: fclean all
 
 lsp:
 	cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -B $(BUILD_DIR)
+	make lsp -C libbad-zapple
 
 .PHONY: lsp 
 
