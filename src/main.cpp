@@ -1,7 +1,9 @@
-#include "bad_zapple.h"
+#include <iostream>
 
 int main(int ac, char **av) {
-	dummy(35);
+	std::cout << "zap zap zappy" << std::endl;
+	std::cout << "zaps" << std::endl;
+	return 0;
 }
 
 
